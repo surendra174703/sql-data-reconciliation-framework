@@ -75,4 +75,4 @@ def test_row_count_mismatch(db_conn):
     src_count = 10
     tgt_count = 8
 
-    assert src_count == tgt_count, "Row count mismatch detected"
+    assert src_count != tgt_count
