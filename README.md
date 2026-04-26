@@ -6,7 +6,7 @@ This project provides a reusable framework to validate and reconcile data betwee
 
 It helps ensure **data accuracy, consistency, and completeness** in ETL pipelines and data migration processes.
 
----
+## “This framework simulates production-grade data validation by decoupling database dependencies using mocks.”
 
 ## 🚀 Features
 
@@ -63,23 +63,15 @@ sql-data-reconciliation-framework/
 
 Run tests locally:
 
-```bash id="n1i0bx"
+```
 pytest
 ```
 
 Generate HTML report:
 
-```bash id="c0g39j"
+```
 pytest --html=reports/report.html
 ```
-
----
-
-## 📊 Example Validation
-
-- Compare row counts between source and target
-- Validate no missing or null values
-- Ensure aggregated values match
 
 ---
 
@@ -98,23 +90,5 @@ This project includes a GitHub Actions workflow:
 
 - Runs tests on every push
 - Generates validation results automatically
-
----
-
-## 💡 Use Cases
-
-- ETL testing
-- Data migration validation
-- Data warehouse testing
-- Data quality checks
-
----
-
-## 🚧 Future Improvements
-
-- Support for multiple databases (Snowflake, Redshift, etc.)
-- Logging and monitoring
-- Advanced reconciliation rules
-- Dashboard/reporting integration
 
 ---

@@ -69,3 +69,10 @@ def test_sum_validation(db_conn, table_names, config_data):
     column = config_data["checks"]["sum"]["column"]
     result = sum_check(db_conn, src, tgt, column)
     assert result is True, f"SUM mismatch in column {column} between {src} and {tgt}"
+
+# Test 4: Row count mismatch check
+def test_row_count_mismatch(db_conn):
+    src_count = 10
+    tgt_count = 8
+
+    assert src_count == tgt_count, "Row count mismatch detected"
