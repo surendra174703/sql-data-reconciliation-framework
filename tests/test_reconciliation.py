@@ -14,6 +14,8 @@ def db_conn():
 """
 
 
+import pytest
+
 @pytest.fixture
 def db_conn():
     class MockCursor:
@@ -21,11 +23,20 @@ def db_conn():
             pass
 
         def fetchone(self):
-            return (10,)   # fake row count
+            return (10,)  # for sum/count
+
+        def fetchall(self):
+            return [(1,), (2,)]  # for mismatch tests
+
+        def close(self):
+            pass
 
     class MockConnection:
         def cursor(self):
             return MockCursor()
+
+        def close(self):
+            pass
 
     return MockConnection()
 
