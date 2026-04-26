@@ -1,0 +1,9 @@
+{
+  "source_table": "orders_src",
+  "target_table": "orders_tgt",
+  "checks": {
+    "sum": {
+      "column": "amount"
+    }
+  }
+}
