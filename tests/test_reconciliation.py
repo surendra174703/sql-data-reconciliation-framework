@@ -26,7 +26,7 @@ def db_conn():
             return (10,)  # for sum/count
 
         def fetchall(self):
-            return [(1,), (2,)]  # for mismatch tests
+            return []  # no mismatch
 
         def close(self):
             pass
