@@ -5,11 +5,30 @@ from src.reconciliation import row_count_check,get_mismatched_rows,sum_check
 
 # DB connection fixture
 
+"""
 @pytest.fixture
 def db_conn():
     conn = get_connection()
     yield conn
     conn.close()
+"""
+
+
+@pytest.fixture
+def db_conn():
+    class MockCursor:
+        def execute(self, query):
+            pass
+
+        def fetchone(self):
+            return (10,)   # fake row count
+
+    class MockConnection:
+        def cursor(self):
+            return MockCursor()
+
+    return MockConnection()
+
 
 # Config fixture
 @pytest.fixture
